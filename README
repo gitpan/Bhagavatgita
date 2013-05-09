@@ -1,5 +1,6 @@
-Bhagavatgita version 1.01
+Bhagavatgita version 1.02
 =========================
+This module is created solely for the purpose of making available contents of Bhagavatgita with ease in your Perl programming if there is a need. 
 Bhagavatgita meaning The Song of the Bhagavan(God), also called Gita, is a 700-verse scripture that is part of the Hindu epic Mahabharata. This scripture contains a conversation between Pandava prince Arjuna and his guide Lord Krishna on a variety of theological and philosophical issues.The material for this module is obtained from "http://www.sacred-texts.com/hin/gita/". The 700-verse in Sanskrit when transulated to English contains more lines and this material contains 2593 lines. Please note that each line DOESNOT represent a verse.
 
 INSTALLATION
@@ -18,7 +19,7 @@ Copyright (C) 2013 by Dileep Mani
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.16.3 or,
 at your option, any later version of Perl 5 you may have available.
-Bhagavatgita version 0.01
+Bhagavatgita version 1.02
 =========================
 
 The README is used to introduce the module and provide instructions on

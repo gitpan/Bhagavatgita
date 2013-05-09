@@ -4,7 +4,7 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 our @EXPORT = qw(gita gita_chapter gita_random);
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 use strict;
 use warnings;
@@ -2777,7 +2777,7 @@ Bhagavatgita - display Gita verses.
   @verse=Bhagavatgita->gita(-first='20',-last='100');
   print @verse; #prints lines from 20 to 100
 
-note: maximum value of -last is 2594
+  #note: maximum value of -last is 2594
 
   @verse=Bhagavatgita->gita(-first='20',-last='last');
   print @verse; #prints line 20 to last line of Bhagavatgita
@@ -2785,20 +2785,26 @@ note: maximum value of -last is 2594
   @chapter=Bhagavatgita::gita_chapter(10);
   print @chapter; #prints entire Chapter 10 with title
 
-note:maximum number of chapter is 18
+  #note:maximum number of chapter is 18
 
   @random=Bhagavatgita::gita_random(15);
   print @random; #prints random 15 consecutive lines
 
 =head1 DESCRIPTION
 
+This module is created solely for the purpose of making available contents of Bhagavatgita with ease if there is a need in your Perl programming.
 Bhagavatgita meaning The Song of the Bhagavan(God), also called Gita, is a 700-verse scripture that is part of the Hindu epic Mahabharata. This scripture contains a conversation between Pandava prince Arjuna and his guide Lord Krishna on a variety of theological and philosophical issues.The material for this module is obtained from "http://www.sacred-texts.com/hin/gita/". The 700-verse in Sanskrit when transulated to English contains more lines and this material contains 2594 lines. Please note that each line DOESNOT represent a verse.
 
 =head2 EXPORT
 
-gita
-gita_chapter
-gita_random
+The following are exported:
+=over 3
+
+=item gita
+
+=item gita_chapter
+
+=item gita_random
 
 =head1 AUTHOR
 
