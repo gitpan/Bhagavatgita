@@ -1,6 +1,7 @@
-Revision history for Perl extension Bhagavatgita.
+	Revision history for Perl extension Bhagavatgita.
+=2013/09/05
 
-0.01  Tue May  7 13:48:27 2013
-	- original version; created by h2xs 1.23 with options
-		-AX --skip-exporter --use-new-tests -n Bhagavatgita
+*changed from just printing the gita lines to passing it to an array
+*added getting entire lines of any prefered chapter
+*getting random consecutive certain number of lines from the gita scripture
 

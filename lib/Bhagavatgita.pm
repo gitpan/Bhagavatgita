@@ -1,28 +1,168 @@
 package Bhagavatgita;
 
+require Exporter;
+
+our @ISA = qw(Exporter);
+our @EXPORT = qw(gita gita_chapter gita_random);
+our $VERSION = '1.01';
+
 use strict;
 use warnings;
 use Carp;
 
-require Exporter;
+my @data;
+my @got;
+my @great;
+my @good;
+my %parm;
 
-our @ISA = qw(Exporter);
+#for getting individual lines
+sub gita {
+&data;
+my $this=[];
+shift @_;
+%parm = @_;
+if( $parm{'-last'} and $parm{'-last'}=~/[a-zA-Z]/ and  $parm{'-last'} eq 'last'){$parm{'-last'}='2594'}
 
-our @EXPORT = qw(gita);
-
-our $VERSION = '0.01';
-
-#my first module
-
-sub gita{
 #checking initial errors
-if(($_[0] or $_[1]) and (($_[0] or $_[1])> 2593)){
-  carp "Error:maximum value allowed is 2593" and exit;
-}elsif($_[0]==0){
+if($parm{'-first'} and $parm{'-first'} > 2594){
+  carp "Error:maximum value allowed is 2594" and exit;
+}elsif($parm{'-last'} and $parm{'-last'} > 2594){
+  carp "Error:maximum value allowed is 2594" and exit;
+}elsif($parm{'-first'}==0){
   carp "Error:numbers should be greater than zero" and exit;
 }
 
-my @data=split / *\n */,
+if( $parm{'-last'} ){
+$parm{'-last'}=$parm{'-last'}-1;
+$parm{'-first'}=$parm{'-first'}-1;
+while ($parm{'-last'} >= $parm{'-first'}){
+  push (@got,"$data[$parm{'-first'}]\n");
+  $parm{'-first'}=$parm{'-first'}+1;
+}
+}else{
+push (@got,"$data[$parm{'-first'}-1]\n");
+}
+
+bless $this;
+return @got;
+}
+
+#for getting content of a chapter
+sub gita_chapter{
+&data;
+#checking for initial errors
+if($_[0] and ($_[0] > 18)){
+  carp "Error:chapter should be from 1 to 18" and exit;
+}
+if($_[0] and ($_[0] < 1)){
+  carp "Error:chapter should be from 1 to 18" and exit;
+}
+my $chapt=[];
+my $b;
+my $e;
+SWITCH:{
+$_[0]==1 && do {push(@great,"Arjun-Vishad or The Book of the Distress of Arjuna\n\n");
+$b=1;$e=136;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==2 && do {push(@great,"Sankhya-Yog or The Book of Doctrines\n\n");
+$b=137;$e=406;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==3 && do {push(@great,"Karma-Yog or The Book of Virtue in Work\n\n");
+$b=407;$e=548;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==4 && do {push(@great,"Jnana Yog or The Book of the Religion of Knowledge\n\n");
+$b=549;$e=699;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==5 && do {push(@great,"Karmasanyasayog or The Book of Religion by Renouncing Fruits of Works\n\n");
+$b=700;$e=801;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==6 && do {push(@great,"Atmasanyamayog or The Book of Religion of Self-Restraint\n\n");
+$b=802;$e=961;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==7 && do {push(@great,"Vijnanayog or The Book of Religion by Discernment\n\n");
+$b=962;$e=1066;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==8 && do {push(@great,"Aksharaparabrahmayog or The Book of Religion by Devotion to the One Supreme God\n\n");
+$b=1067;$e=1158;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==9 && do {push(@great,"Rajavidyarajaguhyayog or The Book of Religion by the Kingly Knowledge and the Kingly Mystery\n\n");
+$b=1159;$e=1293;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==10 && do {push(@great,"Vibhuti Yog or The Book of Religion by the Heavenly Perfections\n\n");
+$b=1294;$e=1412;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==11 && do {push(@great,"Viswarupadarsanam or The Book of the Manifesting of the One and Manifold\n\n");
+$b=1413;$e=1759;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==12 && do {push(@great,"Bhaktiyog or The Book of the Religion of Faith\n\n");
+$b=1760;$e=1828;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==13 && do {push(@great,"Kshetrakshetrajnavibhagayog or The Book of Religion by Separation of Matter and Spirit\n\n");
+$b=1829;$e=1953;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==14 && do {push(@great,"Gunatrayavibhagayog or The Book of Religion by Separation from the Qualities\n\n");
+$b=1954;$e=2049;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==15 && do {push(@great,"Purushottamapraptiyog or The Book of Religion by Attaining the Supreme\n\n");
+$b=2050;$e=2135;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==16 && do {push(@great,"Daivasarasaupadwibhagayog or The Book of the Separateness of the Divine and Undivine\n\n");
+$b=2136;$e=2222;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==17 && do {push(@great,"Sraddhatrayavibhagayog or The Book of Religion by the Threefold Kinds of Faith\n\n");
+$b=2223;$e=2309;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+$_[0]==18 && do {push(@great,"Mokshasanyasayog or The Book of Religion by Deliverance and Renunciation\n\n");
+$b=2310;$e=2594;
+		     while($b<=$e){push(@great,"$data[$b-1]\n");$b=$b+1}
+};
+}
+bless $chapt;
+return @great;
+}
+
+#getting random consecutive numbers
+sub gita_random{
+#checking for initial errors
+  if($_[0] > 2594 or $_[0] < 1){
+carp "error:value should be from 1 to 2594" and exit;
+}
+
+&data;
+my $that=[];
+my $lines=1;
+my $range=2593-$_[0];
+my $number=int(rand($range));
+  while($lines<=$_[0]){
+    push(@good,"$data[$number]\n");
+    $number=$number+1;
+    $lines=$lines+1;
+  }
+bless $that;
+return @good;
+}
+
+#BHAGAVATGITA
+sub data{
+ @data=split / *\n */,
          qq/Dhritirashtra. Ranged thus for battle on the sacred plain-
 On Kurukshetra- say, Sanjaya! say
 What wrought my people, and the Pandavas?
@@ -2617,18 +2757,6 @@ My marvel and my love and bliss. O Archer-Prince! all hail!
 O Krishna, Lord of Yoga! surely there shall not fail
 Blessing, and victory, and power, for Thy most mighty sake,
 Where this song comes of Arjun, and how with God he spake./;
-
-if($_[1]){
-    my $firstline=$_[0];
-    while($_[1]>=$firstline){
-      print "$data[$firstline]";
-      $firstline=$firstline+1;
-    }
-    }else{
-      print "$data[$_[0]]";
-    }
-
-
 }
 
 
@@ -2643,16 +2771,34 @@ Bhagavatgita - display Gita verses.
 =head1 SYNOPSIS
 
   use Bhagavatgita;
-  gita(23); #prints line 23 in Bhagavatgita
-  gita(3,100);  #prints lines from 3 to 100
+  @verse=Bhagavatgita->gita(-first='20');
+  print @verse; #prints line 20
+
+  @verse=Bhagavatgita->gita(-first='20',-last='100');
+  print @verse; #prints lines from 20 to 100
+
+note: maximum value of -last is 2594
+
+  @verse=Bhagavatgita->gita(-first='20',-last='last');
+  print @verse; #prints line 20 to last line of Bhagavatgita
+
+  @chapter=Bhagavatgita::gita_chapter(10);
+  print @chapter; #prints entire Chapter 10 with title
+
+note:maximum number of chapter is 18
+
+  @random=Bhagavatgita::gita_random(15);
+  print @random; #prints random 15 consecutive lines
 
 =head1 DESCRIPTION
 
-Bhagavatgita meaning The Song of the Bhagavan(God), also called Gita, is a 700-verse scripture that is part of the Hindu epic Mahabharata. This scripture contains a conversation between Pandava prince Arjuna and his guide Lord Krishna on a variety of theological and philosophical issues.The material for this module is obtained from "http://www.sacred-texts.com/hin/gita/". The 700-verse in Sanskrit when transulated to English contains more lines and this material contains 2593 lines. Please note that each line DOESNOT represent a verse.
+Bhagavatgita meaning The Song of the Bhagavan(God), also called Gita, is a 700-verse scripture that is part of the Hindu epic Mahabharata. This scripture contains a conversation between Pandava prince Arjuna and his guide Lord Krishna on a variety of theological and philosophical issues.The material for this module is obtained from "http://www.sacred-texts.com/hin/gita/". The 700-verse in Sanskrit when transulated to English contains more lines and this material contains 2594 lines. Please note that each line DOESNOT represent a verse.
 
 =head2 EXPORT
 
 gita
+gita_chapter
+gita_random
 
 =head1 AUTHOR
 
