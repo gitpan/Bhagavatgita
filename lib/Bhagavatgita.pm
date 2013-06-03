@@ -1,15 +1,19 @@
 package Bhagavatgita;
 
+### "LET KNOWLEDGE COME FROM ALL DIRECTIONS" : RIGVEDA ###
+
 require Exporter;
 
 our @ISA = qw(Exporter);
-our @EXPORT = qw(gita gita_chapter gita_random);
-our $VERSION = '2.00';
+our @EXPORT = qw(gita gita_chapter gita_random gita_glossary);
+our $VERSION = '2.01';
 
 use strict;
 use warnings;
 use Carp;
 
+my @ok;
+my @glossary;
 my @data;
 my @got;
 my @great;
@@ -143,7 +147,7 @@ bless $chapt;
 return @great;
 }
 
-#getting random consecutive numbers
+#getting random consecutive verses
 sub gita_random{
 #checking for initial errors
   if($_[0] > 700 or $_[0] < 1){
@@ -167,6 +171,19 @@ push(@good,"$data[$number]\n");
   }
 bless $that;
 return @good;
+}
+
+#getting glossary
+sub gita_glossary{
+&glossary;
+my $ok;
+#adding new line
+foreach $ok(@ok){
+push(@glossary,"$ok\n");
+}
+my $them=[];
+return @glossary;
+bless $them;
 }
 
 #BHAGAVATGITA
@@ -2275,7 +2292,190 @@ Wherever there is Kṛṣṇa, the master of all mystics, and wherever there is 
 $data[699]=~s/Dhṛtarāṣṭra said: O Sañjaya, after my sons and the sons of Pāṇḍu assembled in the place of pilgrimage at Kurukṣetra, desiring to fight, what did they do\?//;
 }
 
-
+#GLOSSARY
+sub glossary{
+@ok=split / *\n */,
+         qq/Abhimanyu : the son of Arjuna  whose name means 'imperishable'
+Achyuta : immortal
+Adharma : unrighteousness
+Adhibhuta : physical region
+Adhyatma : Individual Self - the soul
+Adityas : Demi gods meaning 'sons of the light'
+Agni : Demi god Lord of Fire
+Ahankara : False ego
+Akasa : sky or ether
+Akshara : imperishable
+Arjuna : one of the Pandavas,  mighty archer and one of the two main characters (the other is Krishna) in the Bhagavad Gita. The  name means 'clarity of pure devotion'
+Asita : Ancient sage
+Asvattha : a sacred Banyan tree
+Asvatthaman : one fighting on the Kauravas side whose name means 'who has the obstinacy of a horse'
+Asvins : Twin demi-gods meaning 'lords of pure desire'
+Atma : soul
+Aushadha : plants in general, including rice and barley, eaten by all living beings or it can also mean medicine
+Bharata : refers to the dynasty that ruled ancient India for many generations. The name means 'descendant of the light of wisdom' Sometimes, it refers to Arjuna or to the first ruler in the dynasty, Bharata or to Dhritarashtra. Another name of India 'Bharat' has originated from this term.
+Bhima : one of the 5 Pandavas,with a huge physique and an appetite. The name means 'who knows no fear'
+Bhishma : The grandfather of the Pandavas and the Kauravas fighting on the Kauravas side.the name means 'who rules fear'
+Bhrigu : ancient sage
+Brahma : The God of creation belonging to the trinity (3 Gods) of creation, preservation and destruction in Hinduism
+Brihaspati : chief of priests
+Brihat-Saman : a hymn
+Buddhi : mind, intellect or reason
+Buddhi yoga : Yoga of intelligence
+Chekitana : a king allied with the Pandavas
+Chitraratha : King of the Gandharvas in Hindu mythology along with Tumburu and Visvavasu. Gandharvas are Centaur-like creatures with the upper-half of a human and the lower-half of a horse. They are in charge of the celestial soma of the gods. Chitra-Ratha was a magician and musician at the banquets of gods.
+Devala : Sage
+Dhananjaya : Arjuna meaning'conqueror of wealth'
+Dharma : righteousness, one's correct duty
+Dhrishtadyumna : a king allied to the Pandavas whose name means 'who attacks impurity'
+Dhristaketu : a king allied with the Pandavas whose name means 'continuity of light'
+Dhritarashtra : father of the Kauravas whose name means 'blind ambition'
+Dhrti : constancy
+Draupadi : the common wife of the Pandavas whose name means 'enemy of offenders'
+Drona or Dronacharya : the teacher of warfare to the Pandavas and the Kauravas. His name means 'who injures his foes with weapons'
+Drupada : a king allied with the Pandavas whose name means 'he who stands like a wooden pillar'
+Duryodhana : the eldest of the Kauravas and the chief enemy of the Pandavas. His name means 'defender of evil'
+Dvandva : a word
+Ekitana : one tone of chanting
+Gandharvas : celestial singers
+Anantavijaya : the name of Yudhisthira's conch meaning 'endless victory'
+Asuras : Demons
+Daityas : are a clan or race or Asura as are the Danavas. Daityas were the children of Diti and the sage Kashyapa.
+Devadhatta : the name of Arjuna's conch meaning 'ambassador of the Gods'
+Devatas or Devas : Demi gods
+Brahman, Brahmana : God in general or a or Brahmin i.e God realised soul or the specific caste (sub-division) in Hindu society whose duty is to learn, teach sacred texts and look after the temples.
+Gandiva : the bow of Arjuna meaning 'whose song causes terror'
+Ganges : a very special holy river
+Garuda : celestial bird
+Govinda : Sri Krsna meaning 'who is one-pointed light'
+Gudakesa : another name of Arjuna meaning 'who as conquered sleep'
+Guna : Modes of Material Nature
+Hari : name of Lord Krishna meaning 'remover of duality'
+Himalaya : a mountain range in India
+Hrishikesa : Sri Krsna meaning 'ruler of the senses' 'beholding witness' Son of the Sungod
+Indra : The King of Heaven
+Isvara : God, supreme ruler
+Janaka : the Janakas were a race of kings who ruled Videha Kingdom from their capital Mithila. The father of Sita (the wife of Rama) was named Seeradwaja Janaka. 
+Janardana : Sri Krsna meaning 'who is worshipped by the people'
+Jayadratha : a king allied to the Kauravas
+Japa : silent repetition of the maha mantra
+Jivatma : soul
+Kalpa : period of time
+Kamadhenu or Kamadhuk : The cow who ever produces milk
+Kapila : Incarnation of God
+Karma : work that produces reaction
+Karna : the close friend of Duryodhana, the archer competing in skill with Arjuna and the brother of the Pandavas born to Kunti through Sun God. His name means 'who thinks himself the doer'
+Kasi : place, it is were Bhishma wins three maidens, daughters of king of Kasi for Vichithraveerya. 
+Kasiraja : King of Kasi. It also means 'king of manifested light'
+Kauravas : the 100 brothers and sons of Dhritarashtra
+Kesava : Sri Krsna meaning 'embodiment of the functions of creation, preservation and transformation'
+Keshi : a horse demon
+Kirti : fame
+Kratu : a class or type of Vedic sacrifices
+Kripa or Kripacharya or Krpa : the teacher of spirituality to the Pandavas and the Kauravas and fighting on the Kauravas side. His name means 'who  does and gets'
+Krishna or Krsna or Sri Krsna : God as a friend and war advisor to the Pandavas, a cousin of the Pandavas and the Kauravas, peace maker, charioteer to Arjuna and is the one of the two main characters (the other is Arjuna) in the Bhagavad Gita. The name means 'doer of all'
+Ksama : forgiveness
+Kshetra : field or body
+Kshetrajna : Soul
+Kunti : the mother of the  Pandavas whose name means 'who removes the  deficiency of others'
+Kuntibhoja : a king allied with the Pandavas. His name means 'who enjoys removing the deficiency of others'
+Kurunandhana : Arjuna meaning 'delight of action'
+Kurus : the dynasty of the Bharatha
+Kurukshetra : the name of the Battle-field
+Kusa : a type of grass
+Kusumakara : a season
+Kutastha : the indivisible
+Madhava : Sri Krsna meaning 'whose sweetness is intoxicating'
+Madhu : A demon
+Madhusudhana : Sri Krsna meaning 'slayer of too much' pr Madhusahana
+Maharishis : Great sages
+Maheshvara : God
+Makara : shark
+Manas : mind, thought or heart depending on the context
+Manipushpaka : the name of Sahadeva's conch meaning 'ornament of jewels'
+Mantra : chant
+Manu : ancient man who had written a treatise on righteousness. His name means 'protector of mind'
+Margasirsha : a month roughly corresponding to November
+Mariciaruts : a kind of Devatas meaning 'those who purify'
+Maya : illusion
+Medha : loving intellect
+Moksha : enlightenment,liberation, nirvana, temporary release from suffering
+Maharatha : A maha-ratha is a warrior so perfected in the science of weaponry that he can fight alone against 11,000 bowmen all at the same time and not be defeated.
+Muni : A sage
+Nakula : of the Pandavas. His name means 'who is free from pain
+Narada Muni : Celestial sage who wanders throughout the Universes
+Narayana : Lord of Vaikuntha and one of the three chief Gods
+Nirvana : enlightenment liberation, moksha, release from suffering and attainment of some sort of happiness
+Om : sacred hymn or syllable
+Panchajanya : the name of Krishna's conch meaning 'of the five elements'
+Pandavas : the 5 brothers and sons of Pandu
+Pandu : the father of the Pandavas. The name means 'he who is without prejudice'
+Parabrahman : God
+Paramatma : God as the indwelling advisor
+Partha : Arjuna meaning 'son of she who excels'
+Paundra : the name of Bhima's conch
+Pitris : ancestors
+Prahlada : great devotee
+Prajapati : Prajapati refers to Brahma, a duly authorised Guna avatar of the Supreme Lord who while reflecting on them out of His infinite mercy and for the sake of their ultimate redemption, inspired Brahma to project them into the material manifestation.
+Prakriti : material nature
+Pritha : Another name for  Queen Kunti, mother of Arjuna
+Punya : pious deeds or merit
+Purujit : a king allied with the Pandavas. His name means 'who has complete victory'
+Purushottama : The Supreme Personality of Godhead
+Rajarshis : Great sages
+Rakshasas : demons
+Rama : another incarnation of Sri Krsna, the chief character in the epic,Ramayana
+Rig veda : one of the 4 Vedas
+Rishis : sages
+Rudra : refers to Shiva, the demi god who is the destroyer. The name means 'reliever of suffering'
+Sahadeva : one of the Pandavas. His name means 'equal to the Gods'
+Saibya : a king allied with the Pandavas. His name means 'son of unselfishness'
+Sama veda : one of the four Vedas
+Samsara : material world
+Sanjaya or Samnjaya : the person narrating the Bhagavad Gita with the help of divine insight given to him by the mercy of his spiritual master. His name means 'he who is victorious over all'
+Sankara : Shiva, the God of destruction
+Sankhya : the spiritual route through knowledge
+Sannyasa : the renunciation of materialistic life
+Sattva or Sattvika : Mode of Goodness one of the 3 modes of material nature discussed in chapter 17
+Rajas or Rajasika : Mode of Passion. one of the 3 modes of material nature discussed in chapter 17.
+Satyaki : a king allied to the Pandavas. His name means 'whose nature is truth'
+Savyasachin : ambidextrous - Arjuna meaning 'he who can use both of his hands skillfully'
+Sikhandi : a king allied to the Pandavas. His name means 'who dwells at the summit'
+Smrti : recollection
+Somadatta : His name means 'ambassodor of the nectar of devotion'
+Subhadra : seperate wife of Arjuna. Her name means 'excellent of excellence'
+Sudras : those whose duty is to do labour
+Sughosa : the name of Nakula's conch meaning 'excellent battle-cry'
+Svarga : heaven
+Tamas or Tamasika : Mode of Ignorance. one of the 3 modes of material nature discussed in chapter 17
+Uchchaisaravas : kingly horse born in the ocean when it was churned for nectar
+Vaisyas : duty is to do business
+Varuna : Demi god of water
+Vayu : Demi god of wind
+Vedanta : Conclusion of the Vedas
+Vedas : the ancient holy texts
+Vasuki : Demi god of serpents
+Vikarna : a king allied to the Kauravas. His name means 'who is deaf to evil'
+Virata : a king allied with the Pandavas. His name means 'brilliantly shining'
+Vrkodara : refers to Bhima meaning 'who has a voracious appetite'
+Vyasa : sage and author of Mahabharatha (and hence Bhagavad Gita) and other major religious works like Brahma sutras
+Yajur veda : one of the 4 Vedas
+Yama or Yamarahaja : the demi god of death
+Yudhamanyu : a king allied with the Pandavas. His name means 'who conquers the mind'
+Yudhisthira : the eldest of the Pandavas known for his truthfulness. His name means 'who remains committed to the ideal'
+Yuyudhana : a king allied with the Pandavas. His name means 'defender of wealth'
+Yuga : a measurement of time
+Preceptor : A teacher; an instructor. An expert or specialist. Refers to Drona, the teacher of the Pandavas and the Kauravas
+Bhutas : spirits, ghosts o demons
+Nagas : celestial serpents
+Ksatriya : duty is to fight
+Mahatma : high souled
+Adhiyajna : the aspect of the Supreme Personality of Godhead concerned with Sacrifice
+Brahmachari : person practising celebacy
+Gayatri : a sacred hymn sung three times a day by brahmins
+Jivas : living beings
+Bhagavan : The Supreme Personality of Godhead containing the other two aspects Parabrahman and Paramatma
+Tapasya : austerities performed as a sacrifice/;
+}
 
 1;
 __END__
@@ -2288,23 +2488,26 @@ Bhagavatgita - obtain Gita verses.
 
   use Bhagavatgita;
   @verse=Bhagavatgita->gita(-first='20');
-  print @verse; #prints verse 20
+  print "@verse"; #prints verse 20
 
   @verse=Bhagavatgita->gita(-first='20',-last='100');
-  print @verse; #prints verses from 20 to 100
+  print "@verse"; #prints verses from 20 to 100
 
   note: maximum value of -last is 700
 
   @verse=Bhagavatgita->gita(-first='20',-last='last');
-  print @verse; #prints verse 20 to last verse of Bhagavatgita
+  print "@verse"; #prints verse 20 to last verse of Bhagavatgita
 
   @chapter=gita_chapter(10);
-  print @chapter; #prints entire Chapter 10 with title
+  print "@chapter"; #prints entire Chapter 10 with title
 
   note:maximum number of chapter is 18
 
   @random=gita_random(15);
-  print @random; #prints random 15 consecutive verses
+  print "@random"; #prints random 15 consecutive verses
+
+  @glossary=gita_glossary();
+  print "@glossary";
 
 =head1 DESCRIPTION
 
@@ -2313,11 +2516,14 @@ Bhagavatgita meaning The Song of the Bhagavan(God), also called Gita, is a 700-v
 
 Please note that certain verses has been transulated into a single combined english verse e.g verses 16,17 and 18 are transulated into a single enlgish verse.Check this site to get a clearer picture on that, "http://vedabase.net/bg/1/en". Hence displaying verses 1-16 is same as displaying verses 1-17 or 1-18.
 
+Glossary is obtained from here "https://sites.google.com/site/iskconcapechat/home/books-group/lexicon-dictionary-concordance/glossary-of-bhagavad-gita"
+
 =head2 EXPORT
 
-gita
-gita_chapter
-gita_random
+=item gita
+=item gita_chapter
+=item gita_random
+=item gita_glossary
 
 =head1 AUTHOR
 
