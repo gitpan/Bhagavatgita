@@ -4,5 +4,6 @@ MANIFEST
 README
 t/Bhagavatgita.t
 lib/Bhagavatgita.pm
+bin/gita
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)

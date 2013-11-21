@@ -6,7 +6,7 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 our @EXPORT = qw(gita gita_chapter gita_random gita_glossary);
-our $VERSION = '2.01';
+our $VERSION = '2.02';
 
 use strict;
 use warnings;
@@ -162,7 +162,6 @@ my $number=int(rand($range));
   while($lines<=$_[0]){
     if($data[$number] eq $data[$number+1]){
     $number=$number+1;
-    $lines=$lines+1;
 }else{
 push(@good,"$data[$number]\n");
     $number=$number+1;
@@ -2482,9 +2481,12 @@ __END__
 
 =head1 NAME
 
-Bhagavatgita - obtain Gita verses.
+Bhagavatgita - display/obtain Gita verses.
 
 =head1 SYNOPSIS
+
+  #for displaying random Bhagavatgita verse in terminal
+  gita
 
   use Bhagavatgita;
   @verse=Bhagavatgita->gita(-first='20');
@@ -2511,12 +2513,12 @@ Bhagavatgita - obtain Gita verses.
 
 =head1 DESCRIPTION
 
-Module solely for the purpose of making available contents of Bhagavatgita with ease if there is a need in your Perl programming.
+Module for accessing contents of Bhagavatgita.
 Bhagavatgita meaning The Song of the Bhagavan(God), also called Gita, is a 700-verse scripture that is part of the Hindu epic Mahabharata. This scripture contains a conversation between Pandava prince Arjuna and his guide Lord Krishna on a variety of theological and philosophical issues.The material used is a transulation by A.C. Bhaktivedanta Swami Prabhupada
 
-Please note that certain verses has been transulated into a single combined english verse e.g verses 16,17 and 18 are transulated into a single enlgish verse.Check this site to get a clearer picture on that, "http://vedabase.net/bg/1/en". Hence displaying verses 1-16 is same as displaying verses 1-17 or 1-18.
+Please note that certain verses has been transulated into a single combined english verse e.g verses 16,17 and 18 are transulated into a single english verse.Check this site to make clarity on that, "http://vedabase.net/bg/1/en". Hence displaying verses 1-16 is same as displaying verses 1-17 or 1-18.
 
-Glossary is obtained from here "https://sites.google.com/site/iskconcapechat/home/books-group/lexicon-dictionary-concordance/glossary-of-bhagavad-gita"
+Glossary is obtained from "https://sites.google.com/site/iskconcapechat/home/books-group/lexicon-dictionary-concordance/glossary-of-bhagavad-gita"
 
 =head2 EXPORT
 
