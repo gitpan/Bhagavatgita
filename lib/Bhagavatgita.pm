@@ -6,7 +6,7 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 our @EXPORT = qw(gita gita_chapter gita_random gita_glossary);
-our $VERSION = '2.02';
+our $VERSION = '2.03';
 
 use strict;
 use warnings;

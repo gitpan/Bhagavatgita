@@ -1,10 +1,10 @@
 {
-   "abstract" : "obtain Gita verses.",
+   "abstract" : "display/obtain Gita verses.",
    "author" : [
       "Dileep Mani <dileepmani@gmail.com>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.82, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "ExtUtils::MakeMaker version 6.82, CPAN::Meta::Converter version 2.131560",
    "license" : [
       "unknown"
    ],
@@ -35,5 +35,5 @@
       }
    },
    "release_status" : "stable",
-   "version" : "2.02"
+   "version" : "2.03"
 }

@@ -17,3 +17,6 @@
 =2013/11/20
 *corrected problem with selecting random verses
 *added gita script to bin
+
+=2013/11/22
+*gita script did not work.Problem corrected with adding changes in Makefile.PL
