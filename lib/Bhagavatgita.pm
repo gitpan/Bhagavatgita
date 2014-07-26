@@ -6,7 +6,7 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 our @EXPORT = qw(gita gita_chapter gita_random gita_glossary);
-our $VERSION = '2.03';
+our $VERSION = '2.04';
 
 use strict;
 use warnings;
@@ -2522,10 +2522,12 @@ Glossary is obtained from "https://sites.google.com/site/iskconcapechat/home/boo
 
 =head2 EXPORT
 
+=over
 =item gita
 =item gita_chapter
 =item gita_random
 =item gita_glossary
+=back
 
 =head1 AUTHOR
 
@@ -2533,7 +2535,7 @@ Dileep Mani <dileepmani@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2013 by Dileep Mani
+Copyright (C) 2014 by Dileep Mani
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.16.3 or,
