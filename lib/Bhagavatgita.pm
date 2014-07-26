@@ -6,7 +6,7 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 our @EXPORT = qw(gita gita_chapter gita_random gita_glossary);
-our $VERSION = '2.04';
+our $VERSION = '2.05';
 
 use strict;
 use warnings;
@@ -2523,10 +2523,12 @@ Glossary is obtained from "https://sites.google.com/site/iskconcapechat/home/boo
 =head2 EXPORT
 
 =over
+
 =item gita
 =item gita_chapter
 =item gita_random
 =item gita_glossary
+
 =back
 
 =head1 AUTHOR
